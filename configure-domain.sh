@@ -32,4 +32,4 @@ function run-append() {
 }
 
  run-append
- wget https://gist.githubusercontent.com/ashraf-revo/e7dfa870aa83aaf14435a3fd80346c88/raw/8625f06c9f846d1c0976e92de381b67b4e9bb3ae/docker-compose.yml
+ wget https://raw.githubusercontent.com/cvhome-saas/assets/refs/heads/main/docker-compose.yml
