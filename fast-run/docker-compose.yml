@@ -29,7 +29,7 @@ services:
       MINIO_ACCESS_KEY: "minioadmin"
       MINIO_SECRET_KEY: "minioadmin"
   auth:
-    image: store-core/auth
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/auth:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       KC_HTTP_ENABLED: true
@@ -51,7 +51,7 @@ services:
     depends_on:
       - postgres
   merchant:
-    image: store-pod/merchant
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/merchant:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -69,7 +69,7 @@ services:
       - postgres
       - minio
   content:
-    image: store-pod/content
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/content:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -87,7 +87,7 @@ services:
       - postgres
       - minio
   catalog:
-    image: store-pod/catalog
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/catalog:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -105,7 +105,7 @@ services:
       - postgres
       - minio
   order:
-    image: store-pod/order
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/order:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -124,28 +124,28 @@ services:
       - minio
 
   landing-ui:
-    image: store-pod/landing-ui
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/landing-ui:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
     ports:
       - "8110:8110"
   merchant-ui:
-    image: store-pod/merchant-ui
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/merchant-ui:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
     ports:
       - "8111:8111"
   store-pod-gateway:
-    image: store-pod/store-pod-gateway
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/store-pod-gateway:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
     ports:
       - "8100:8100"
   store-pod-saas-gateway:
-    image: store-pod/store-pod-saas-gateway
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/store-pod-saas-gateway:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -159,7 +159,7 @@ services:
       - store-pod-gateway
 
   manager:
-    image: store-core/manager
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/manager:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -169,7 +169,7 @@ services:
       - postgres
       - auth
   subscription:
-    image: store-core/subscription
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/subscription:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -179,21 +179,21 @@ services:
       - postgres
       - auth
   store-ui:
-    image: store-core/store-ui
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/store-ui:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
     ports:
       - "8010:8010"
   welcome-ui:
-    image: store-core/welcome-ui
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/welcome-ui:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
     ports:
       - "8011:8011"
   store-core-gateway:
-    image: store-core/store-core-gateway
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/store-core-gateway:develop-0.2.13-14690254909-SNAPSHOT
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
