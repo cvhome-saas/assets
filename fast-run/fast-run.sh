@@ -53,4 +53,4 @@ function pull-images() {
 
  run-append
  pull-images
- wget https://raw.githubusercontent.com/cvhome-saas/assets/refs/heads/main/docker-compose.yml
+ wget https://raw.githubusercontent.com/cvhome-saas/assets/refs/heads/main/fast-run/docker-compose.yml
