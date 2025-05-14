@@ -148,9 +148,9 @@ services:
     image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/store-pod-saas-gateway:1.0.0
     network_mode: host
     environment:
-      SPRING_PROFILES_ACTIVE: lcl
       STORE_POD_GATEWAY: http://store-pod-1.gateway.com:8100
       ASK_TLS_URL: http://gateway.com:8000/manager/api/v1/router/public/ask-for-tls
+      DOMAIN_LOOKUP_URL: http://gateway.com:8000/manager/api/v1/router/public/lookup-by-domain
     ports:
       - "80:80"
       - "443:443"
