@@ -15,7 +15,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
   minio:
-    image: bitnami/minio
+    image: bitnami/minio:2025.4.22
     network_mode: host
     ports:
       - "9000:9000"
