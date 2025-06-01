@@ -51,7 +51,7 @@ function pull_docker_images() {
   docker pull rabbitmq:4.0.2-management
   docker pull postgres:15-alpine
   docker pull bitnami/minio
-  docker pull "public.ecr.aws/g0a5h6c1/1691275173/store-core/auth:${APP_VERSION}"
+  docker pull "public.ecr.aws/g0a5h6c1/1691275173/store-core/core-auth:${APP_VERSION}"
   docker pull "public.ecr.aws/g0a5h6c1/1691275173/store-pod/merchant:${APP_VERSION}"
   docker pull "public.ecr.aws/g0a5h6c1/1691275173/store-pod/content:${APP_VERSION}"
   docker pull "public.ecr.aws/g0a5h6c1/1691275173/store-pod/catalog:${APP_VERSION}"
