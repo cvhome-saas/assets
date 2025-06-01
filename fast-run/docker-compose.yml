@@ -29,7 +29,7 @@ services:
       MINIO_ACCESS_KEY: "minioadmin"
       MINIO_SECRET_KEY: "minioadmin"
   auth:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/auth:latest
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/core-auth:latest
     network_mode: host
     environment:
       KC_HTTP_ENABLED: true
