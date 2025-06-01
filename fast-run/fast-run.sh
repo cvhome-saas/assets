@@ -7,7 +7,7 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # --- Configuration ---
-readonly APP_VERSION="1.0.0" # Define the application version here
+readonly APP_VERSION="latest" # Define the application version here
 readonly DOCKER_COMPOSE_URL="https://raw.githubusercontent.com/cvhome-saas/assets/refs/heads/main/fast-run/docker-compose.yml"
 readonly DOCKER_COMPOSE_FILE="docker-compose.yml" # Define filename for docker-compose
 
@@ -34,7 +34,7 @@ function configure_hosts_file() {
     echo "Info: Configuring '$file'..." >&2
     append_if_not_exists "127.0.0.1 gateway.com" "$file"
     append_if_not_exists "127.0.0.1 www.gateway.com" "$file"
-    append_if_not_exists "127.0.0.1 auth.gateway.com" "$file"
+    append_if_not_exists "127.0.0.1 core-auth.gateway.com" "$file"
     append_if_not_exists "127.0.0.1 store-ui.gateway.com" "$file"
     append_if_not_exists "127.0.0.1 welcome-ui.gateway.com" "$file"
     append_if_not_exists "127.0.0.1 store-pod-1.gateway.com" "$file"

@@ -29,7 +29,7 @@ services:
       MINIO_ACCESS_KEY: "minioadmin"
       MINIO_SECRET_KEY: "minioadmin"
   auth:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/auth:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/auth:latest
     network_mode: host
     environment:
       KC_HTTP_ENABLED: true
@@ -51,7 +51,7 @@ services:
     depends_on:
       - postgres
   merchant:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/merchant:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/merchant:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -69,7 +69,7 @@ services:
       - postgres
       - minio
   content:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/content:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/content:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -87,7 +87,7 @@ services:
       - postgres
       - minio
   catalog:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/catalog:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/catalog:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -105,7 +105,7 @@ services:
       - postgres
       - minio
   order:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/order:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/order:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -124,28 +124,28 @@ services:
       - minio
 
   landing-ui:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/landing-ui:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/landing-ui:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
     ports:
       - "8110:8110"
   merchant-ui:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/merchant-ui:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/merchant-ui:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
     ports:
       - "8111:8111"
   store-pod-gateway:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/store-pod-gateway:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/store-pod-gateway:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
     ports:
       - "8100:8100"
   store-pod-saas-gateway:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/store-pod-saas-gateway:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-pod/store-pod-saas-gateway:latest
     network_mode: host
     environment:
       STORE_POD_GATEWAY: http://store-pod-1.gateway.com:8100
@@ -159,7 +159,7 @@ services:
       - store-pod-gateway
 
   manager:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/manager:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/manager:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -169,7 +169,7 @@ services:
       - postgres
       - auth
   subscription:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/subscription:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/subscription:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
@@ -179,21 +179,21 @@ services:
       - postgres
       - auth
   store-ui:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/store-ui:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/store-ui:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
     ports:
       - "8010:8010"
   welcome-ui:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/welcome-ui:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/welcome-ui:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
     ports:
       - "8011:8011"
   store-core-gateway:
-    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/store-core-gateway:1.0.0
+    image: public.ecr.aws/g0a5h6c1/1691275173/store-core/store-core-gateway:latest
     network_mode: host
     environment:
       SPRING_PROFILES_ACTIVE: lcl
