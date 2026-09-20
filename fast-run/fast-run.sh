@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# fast-run is retired. It described the 1.x service layout (core-auth, store-ui, welcome-ui, merchant-ui,
+# order) and images that no longer exist, so it cannot start the platform. The supported way to run cvhome
+# locally is the lcl stack runner in a cvhome checkout; the guide is on the docs site.
+echo "fast-run is retired and no longer starts cvhome." >&2
+echo "Run the platform locally with lcl instead: https://cvhome-saas.github.io/development/local-development" >&2
+exit 1
+
+# --- The previous script follows for reference only; nothing below runs. ---
+
 # Check if running as root
 if [ $(id -u) -ne 0 ]; then
   echo "Please run this script as root or using sudo!"
